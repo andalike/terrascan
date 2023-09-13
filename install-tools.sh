@@ -10,4 +10,4 @@ unzip tflint.zip -d "${INSTALL_DIR}"
 
 # Install Tfsec
 wget -qO tfsec https://github.com/aquasecurity/tfsec/releases/download/v1.28.1/tfsec-checkgen-linux-amd64
-unzip tfsec -d "${INSTALL_DIR}"
+tfsec -d "${INSTALL_DIR}"
