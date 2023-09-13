@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="tfsec" failures="4" tests="39">
+	<testcase classname="Modules/terraform-aws-eks/main.tf" name="[aws-cloudwatch-log-group-customer-key][LOW] - " time="0"></testcase>
+	<testcase classname="Modules/terraform-aws-eks/node_groups.tf" name="[aws-ec2-add-description-to-security-group][LOW] - " time="0"></testcase>
+	<testcase classname="Modules/terraform-aws-eks/main.tf" name="[aws-ec2-add-description-to-security-group][LOW] - " time="0"></testcase>
+	<testcase classname="Modules/terraform-aws-eks/node_groups.tf" name="[aws-ec2-add-description-to-security-group-rule][LOW] - " time="0"></testcase>
+	<testcase classname="Modules/terraform-aws-eks/node_groups.tf" name="[aws-ec2-add-description-to-security-group-rule][LOW] - " time="0"></testcase>
+	<testcase classname="Modules/terraform-aws-eks/node_groups.tf" name="[aws-ec2-add-description-to-security-group-rule][LOW] - " time="0"></testcase>
+	<testcase classname="Modules/terraform-aws-eks/node_groups.tf" name="[aws-ec2-add-description-to-security-group-rule][LOW] - " time="0"></testcase>
+	<testcase classname="Modules/terraform-aws-eks/node_groups.tf" name="[aws-ec2-add-description-to-security-group-rule][LOW] - " time="0"></testcase>
+	<testcase classname="Modules/terraform-aws-eks/node_groups.tf" name="[aws-ec2-add-description-to-security-group-rule][LOW] - " time="0"></testcase>
+	<testcase classname="Modules/terraform-aws-eks/node_groups.tf" name="[aws-ec2-add-description-to-security-group-rule][LOW] - " time="0"></testcase>
+	<testcase classname="Modules/terraform-aws-eks/node_groups.tf" name="[aws-ec2-add-description-to-security-group-rule][LOW] - " time="0"></testcase>
+	<testcase classname="Modules/terraform-aws-eks/node_groups.tf" name="[aws-ec2-add-description-to-security-group-rule][LOW] - " time="0"></testcase>
+	<testcase classname="Modules/terraform-aws-eks/node_groups.tf" name="[aws-ec2-add-description-to-security-group-rule][LOW] - " time="0"></testcase>
+	<testcase classname="Modules/terraform-aws-eks/main.tf" name="[aws-ec2-add-description-to-security-group-rule][LOW] - " time="0"></testcase>
+	<testcase classname="Modules/terraform-aws-eks/node_groups.tf" name="[aws-ec2-no-public-egress-sgr][CRITICAL] - Security group rule allows egress to multiple public internet addresses." time="0">
+		<failure message="Security group rule allows egress to multiple public internet addresses." type="">Modules/terraform-aws-eks/node_groups.tf:223&#xA;&#xA;  cidr_blocks              = lookup(each.value, &#34;cidr_blocks&#34;, null)&#xA;&#xA;&#xA;See https://aquasecurity.github.io/tfsec/v1.28.4/checks/aws/ec2/no-public-egress-sgr/</failure>
+	</testcase>
+	<testcase classname="Modules/terraform-aws-eks/node_groups.tf" name="[aws-ec2-no-public-ingress-sgr][CRITICAL] - " time="0"></testcase>
+	<testcase classname="Modules/terraform-aws-eks/node_groups.tf" name="[aws-ec2-no-public-ingress-sgr][CRITICAL] - " time="0"></testcase>
+	<testcase classname="Modules/terraform-aws-eks/node_groups.tf" name="[aws-ec2-no-public-ingress-sgr][CRITICAL] - " time="0"></testcase>
+	<testcase classname="Modules/terraform-aws-eks/node_groups.tf" name="[aws-ec2-no-public-ingress-sgr][CRITICAL] - " time="0"></testcase>
+	<testcase classname="Modules/terraform-aws-eks/node_groups.tf" name="[aws-ec2-no-public-ingress-sgr][CRITICAL] - " time="0"></testcase>
+	<testcase classname="Modules/terraform-aws-eks/node_groups.tf" name="[aws-ec2-no-public-ingress-sgr][CRITICAL] - " time="0"></testcase>
+	<testcase classname="Modules/terraform-aws-eks/node_groups.tf" name="[aws-ec2-no-public-ingress-sgr][CRITICAL] - " time="0"></testcase>
+	<testcase classname="Modules/terraform-aws-eks/node_groups.tf" name="[aws-ec2-no-public-ingress-sgr][CRITICAL] - " time="0"></testcase>
+	<testcase classname="Modules/terraform-aws-eks/node_groups.tf" name="[aws-ec2-no-public-ingress-sgr][CRITICAL] - " time="0"></testcase>
+	<testcase classname="Modules/terraform-aws-eks/main.tf" name="[aws-ec2-no-public-ingress-sgr][CRITICAL] - " time="0"></testcase>
+	<testcase classname="Modules/terraform-aws-eks/main.tf" name="[aws-eks-enable-control-plane-logging][MEDIUM] - Control plane controller manager logging is not enabled." time="0">
+		<failure message="Control plane controller manager logging is not enabled." type="">Modules/terraform-aws-eks/main.tf:25-91&#xA;&#xA;resource &#34;aws_eks_cluster&#34; &#34;this&#34; {&#xA;  count = local.create ? 1 : 0&#xA;&#xA;  name                      = var.cluster_name&#xA;  role_arn                  = local.cluster_role&#xA;  version                   = var.cluster_version&#xA;  enabled_cluster_log_types = var.cluster_enabled_log_types&#xA;&#xA;  vpc_config {&#xA;&#xA;&#xA;See https://aquasecurity.github.io/tfsec/v1.28.4/checks/aws/eks/enable-control-plane-logging/</failure>
+	</testcase>
+	<testcase classname="Modules/terraform-aws-eks/main.tf" name="[aws-eks-enable-control-plane-logging][MEDIUM] - Control plane scheduler logging is not enabled." time="0">
+		<failure message="Control plane scheduler logging is not enabled." type="">Modules/terraform-aws-eks/main.tf:25-91&#xA;&#xA;resource &#34;aws_eks_cluster&#34; &#34;this&#34; {&#xA;  count = local.create ? 1 : 0&#xA;&#xA;  name                      = var.cluster_name&#xA;  role_arn                  = local.cluster_role&#xA;  version                   = var.cluster_version&#xA;  enabled_cluster_log_types = var.cluster_enabled_log_types&#xA;&#xA;  vpc_config {&#xA;&#xA;&#xA;See https://aquasecurity.github.io/tfsec/v1.28.4/checks/aws/eks/enable-control-plane-logging/</failure>
+	</testcase>
+	<testcase classname="Modules/terraform-aws-eks/main.tf" name="[aws-eks-enable-control-plane-logging][MEDIUM] - Cluster plane authenticator logging enabled" time="0"></testcase>
+	<testcase classname="Modules/terraform-aws-eks/main.tf" name="[aws-eks-enable-control-plane-logging][MEDIUM] - Cluster plane audit logging enabled" time="0"></testcase>
+	<testcase classname="Modules/terraform-aws-eks/main.tf" name="[aws-eks-enable-control-plane-logging][MEDIUM] - Cluster plane API logging enabled" time="0"></testcase>
+	<testcase classname="Modules/terraform-aws-eks/main.tf" name="[aws-eks-encrypt-secrets][HIGH] - " time="0"></testcase>
+	<testcase classname="Modules/terraform-aws-eks/main.tf" name="[aws-eks-no-public-cluster-access][CRITICAL] - " time="0"></testcase>
+	<testcase classname="Modules/terraform-aws-eks/main.tf" name="[aws-iam-no-policy-wildcards][HIGH] - " time="0"></testcase>
+	<testcase classname="Modules/terraform-aws-eks/main.tf" name="[aws-iam-no-policy-wildcards][HIGH] - " time="0"></testcase>
+	<testcase classname="Modules/terraform-aws-eks/main.tf" name="[aws-iam-no-policy-wildcards][HIGH] - " time="0"></testcase>
+	<testcase classname="Modules/terraform-aws-eks/main.tf" name="[aws-iam-no-policy-wildcards][HIGH] - " time="0"></testcase>
+	<testcase classname="Modules/terraform-aws-eks/main.tf" name="[aws-iam-no-policy-wildcards][HIGH] - " time="0"></testcase>
+	<testcase classname="git::https:/github.com/terraform-aws-modules/terraform-aws-kms?ref=v1.1.0/main.tf" name="[aws-kms-auto-rotate-keys][MEDIUM] - " time="0"></testcase>
+	<testcase classname="Modules/terraform-aws-vpc/main.tf" name="[aws-ec2-require-vpc-flow-logs-for-all-vpcs][MEDIUM] - VPC Flow Logs is not enabled for VPC " time="0">
+		<failure message="VPC Flow Logs is not enabled for VPC " type="">Modules/terraform-aws-vpc/main.tf:28-51&#xA;&#xA;resource &#34;aws_vpc&#34; &#34;this&#34; {&#xA;  count = local.create_vpc ? 1 : 0&#xA;&#xA;  cidr_block          = var.use_ipam_pool ? null : var.cidr&#xA;  ipv4_ipam_pool_id   = var.ipv4_ipam_pool_id&#xA;  ipv4_netmask_length = var.ipv4_netmask_length&#xA;&#xA;  assign_generated_ipv6_cidr_block     = var.enable_ipv6 &amp;&amp; !var.use_ipam_pool ? true : null&#xA;  ipv6_cidr_block                      = var.ipv6_cidr&#xA;&#xA;&#xA;See https://aquasecurity.github.io/tfsec/v1.28.4/checks/aws/ec2/require-vpc-flow-logs-for-all-vpcs/</failure>
+	</testcase>
+</testsuite>
