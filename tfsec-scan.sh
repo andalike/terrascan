@@ -6,7 +6,7 @@ chmod +x ${WORKSPACE}/tools/tfsec
 TFSEC_EXECUTABLE="${WORKSPACE}/tools/tfsec"
 
 # Run tfsec using the full path
-$TFSEC_EXECUTABLE -f junit,default --out tfsec --config-file tfsec.yaml --no-color --include-passed
+$TFSEC_EXECUTABLE --format junit --out tfsec-junit.xml --config-file tfsec.yaml --no-color --include-passed
 
 # Capture the exit status code
 echo $? > tfsecstatus.txt
