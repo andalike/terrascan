@@ -15,7 +15,7 @@ unzip terraform.zip -d "${INSTALL_DIR}"
 # fi
 
 # Verify that 'tflint' is now available
-tflint --version
+# tflint --version
 
 # Install Tfsec
 wget -qO tfsec https://github.com/aquasecurity/tfsec/releases/download/v1.28.1/tfsec-checkgen-linux-amd64
