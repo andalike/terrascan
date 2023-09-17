@@ -6,7 +6,16 @@ pipeline {
         TOOLS_DIR = "${WORKSPACE}/tools"
     }
 
+    
+
     stages {
+  stage('Clean Workspace') {
+            steps {
+                // Clean up files and directories in the workspace
+                cleanWs()
+            }
+        }
+        
         stage('Checkout') {
             steps {
                 // Checkout your Terraform code from your Git repository
@@ -30,6 +39,7 @@ pipeline {
                         sh "curl -L https://github.com/terraform-linters/tflint/releases/latest/download/tflint_linux_amd64.zip -o ${TOOLS_DIR}/tflint_linux_amd64.zip"
                         sh "unzip ${TOOLS_DIR}/tflint_linux_amd64.zip -d ${TOOLS_DIR}"
                         sh "chmod +x ${TOOLS_DIR}/tflint"
+                        sh "${TOOLS_DIR}/tflint --version"
                     }
 
                     // Download and install TfSec if not already installed
@@ -38,6 +48,7 @@ pipeline {
                         sh "mkdir -p ${TOOLS_DIR}"
                         sh "curl -L https://github.com/aquasecurity/tfsec/releases/latest/download/tfsec-linux-amd64 -o ${TOOLS_DIR}/tfsec"
                         sh "chmod +x ${TOOLS_DIR}/tfsec"
+                        sh "${TOOLS_DIR}/tfsec --version"
                     }
                 }
             }
@@ -62,6 +73,11 @@ pipeline {
         stage('Run TfSec Scan') {
             steps {
                 script {
+                    // Ensure that TfSec is installed before running it
+                    if (!fileExists("${TOOLS_DIR}/tfsec")) {
+                        error "TfSec is not installed. Please check the installation script."
+                    }
+
                     // Run TfSec scan on your Terraform code
                     def tfsecExitCode = sh(
                         script: "${TOOLS_DIR}/tfsec -f junit,default --out tfsec --config-file tfsec.yaml --no-color --include-passed",
